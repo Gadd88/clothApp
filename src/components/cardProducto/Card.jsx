@@ -23,9 +23,9 @@ const Card = ({producto}) => {
   return (    
     <>
     
-        <div className={`w-[160px] h-[280px] border-black border-2 rounded-none ${clicked ? 'shadow-[4px_4px_0_var(--aqua)]' : 'shadow-[4px_4px_0px_#000]'} bg-green-300 overflow-hidden flex-shrink-0`}> 
-            <article className="w-full h-full flex flex-col items-center justify-between">
-                <figure className="w-full h-3/5 border-black border-b-2 cursor-pointer bg-white" onClick={()=>setActive(true)}>
+        <div className={`w-[150px] h-[250px] sm:w-[200px] sm:h-[300px] border-black border-2 rounded-none ${clicked ? 'shadow-[4px_4px_0_var(--aqua)]' : 'shadow-box'} bg-green-300 overflow-hidden flex-shrink-0`}> 
+            <article className="w-full h-full flex flex-col items-center p-2 justify-between">
+                <figure className="w-[130px] h-[230px] sm:w-[180px] sm:h-[150px] border-black border-2 shadow-box-sm rounded-md overflow-hidden cursor-pointer bg-white" onClick={()=>setActive(true)}>
                     <img
                         src={producto.image?.url ? producto.image.url : 'http://www.ooshirts.com/products/165/catalog.jpg'}
                         alt="thumbnail"
@@ -33,9 +33,9 @@ const Card = ({producto}) => {
                         />
                 </figure>
                 <ListaTags />
-                <div className="flex flex-col gap-3 items-end h-full">
-                    <section className="bg-[var(--lavanda-fuerte)] w-full flex items-center justify-between">
-                        <h2 className="text-sm ps-1 line-clamp-1">{producto.name}</h2>
+                <div className="flex flex-col justify-between items-end w-full">
+                    <section className="w-full flex items-center justify-between px-1 mb-5">
+                        <h2 className="text-sm ps-1 w-[80%] line-clamp-1 border-2 border-black shadow-box-sm">{producto.name}</h2>
                         <span 
                             className="cursor-pointer relative active:drop-shadow-[1px_1px_0_#000] p-1 "
                             onClick={()=>handleClick(producto)}>
@@ -44,7 +44,7 @@ const Card = ({producto}) => {
                             }
                         </span>
                     </section>
-                    <p className="text-sm w-[70px] text-center font-grotesque font-semibold rounded-none shadow-[3px_3px_0px_rgba(0,0,0,1)] p-0 me-2 bg-[var(--azul-aqua)] text-white cursor-default">
+                    <p className="text-sm w-[70px] text-center font-grotesque font-semibold rounded-none shadow-box-sm bg-[var(--azul-aqua)] text-white cursor-default">
                         <strong>$2500</strong>
                     </p>
                 </div>

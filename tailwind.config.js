@@ -24,6 +24,10 @@ export default {
           "100%": { transform: "translateX(0%)" },
         },
       },
+      boxShadow:{
+        'box': '4px 4px 0 0 #000',
+        'box-sm': '2px 2px 0 0 #000',
+      }
     },
   },
   plugins: [],
