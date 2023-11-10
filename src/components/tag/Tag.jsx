@@ -7,7 +7,7 @@ const Tag = ({talle}) => {
   let azul = 'var(--celeste)'
 
   return (
-    <div className={`w-[30px] rounded-none border-2 border-black bg-[${talle=='S' ? amarillo : talle=='M' ? lavanda : azul}] px-1 text-xs text-center font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none font-grotesque mt-1 mx-1 cursor-default`}>
+    <div className={`w-[30px] rounded-none border-1 border-black bg-[${talle=='S' ? amarillo : talle=='M' ? lavanda : azul}] px-1 text-xs text-center font-bold shadow-[4px_4px_0px_#000] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none font-grotesque mt-1 mx-1 cursor-default`}>
       {talle}
     </div>
   )

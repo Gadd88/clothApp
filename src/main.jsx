@@ -11,7 +11,7 @@ import { ClothProvider } from './context/clothProvider.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <button className='rounded-none border-4 border-black shadow-[8px_8px_0_#000] p-4 w-[200px] h-[100px] text-4xl text-bold absolute inset-[40%] active:inset-[41%] active:bg-white '><Link to={'/productos'}>Entrar</Link></button>,
+    element: <button className='rounded-none border-4 bg-green-300 border-black shadow-[8px_8px_0_#000] p-4 w-[200px] h-[100px] text-4xl text-bold absolute inset-[40%] active:inset-[41%] active:bg-white '><Link to={'/productos'}>Entrar</Link></button>,
     errorElement: <h1>No se encontró la página</h1>
   },
   {
