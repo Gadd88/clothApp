@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
         <Navbar/>
-        <main>
+        <main className="relative my-24">
             <h1 className="text-center text-4xl">Ultimos Ingresos</h1>
             <ListProductos/>
             <Outlet/>

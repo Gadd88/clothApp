@@ -16,7 +16,7 @@ const Navbar = () =>{
         setActive(true)
     }
     return(
-        <header className="p-2 fixed top-0">
+        <header className="p-2 fixed top-0 w-full h-20 z-20">
             <nav className='flex justify-between'>
                 <section className="logo">
                     <h1 className="text-5xl text-center font-lemure">Cloth App</h1>

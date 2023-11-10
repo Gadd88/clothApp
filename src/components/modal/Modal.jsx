@@ -27,7 +27,7 @@ export default function Modal({ active, setActive, producto }) {
                 <div
                     role="dialog"
                     aria-modal="true"
-                    className="fixed left-0 top-0 flex h-screen w-screen items-center justify-center font-grotesque overflow-hidden"
+                    className="fixed left-0 top-0 flex h-screen w-screen items-center justify-center font-grotesque overflow-hidden z-30"
                     >
                     <div
                         style={{
