@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Darker Grotesque', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: var(--amarillo);
+  scroll-behavior: smooth;
+
+  --background: #cfb43a;
+  --amarillo: #f9d820;
+  --rosa-piel: #e0bca4;
+  --azul-aqua: #1469aa;
+  --azul-suave: #5f909f;
+  --lavanda: #d1acb8;
+  --lavanda-fuerte: #bc95d4;
+  --gris-petro: #3e526a;
+  --rosa: #ff90e8;
+  --amarillo-bru: #ffc900;
+  --aqua: #23a094;
+  --celeste: #90a8ed;
+  --negro: #000000;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+header{
+  height: 20%;
+}
+main{
+  padding: 10px;
+}
+
+header{
+  font-family: 'Darker Grotesque';
+  font-weight: 700; 
+  background-color: var(--lavanda);
+  border-bottom: 5px solid #000;
+}
