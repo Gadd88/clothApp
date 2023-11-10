@@ -35,7 +35,7 @@ const Card = ({producto}) => {
                 <ListaTags />
                 <div className="flex flex-col justify-between items-end w-full">
                     <section className="w-full flex items-center justify-between px-1 mb-5">
-                        <h2 className="text-sm ps-1 w-[80%] line-clamp-1 border-2 border-black shadow-box-sm">{producto.name}</h2>
+                        <h2 className="text-sm ps-1 w-[80%] line-clamp-1 border-2 border-black shadow-box-sm bg-white">{producto.name}</h2>
                         <span 
                             className="cursor-pointer relative active:drop-shadow-[1px_1px_0_#000] p-1 "
                             onClick={()=>handleClick(producto)}>
