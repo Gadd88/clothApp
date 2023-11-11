@@ -1,7 +1,7 @@
 
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"
 import ListaTags from "../tagList/ListaTags"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import Modal from "../modal/Modal"
 import { ClothContext } from "../../context/clothContext"
 
@@ -9,17 +9,11 @@ import { ClothContext } from "../../context/clothContext"
 
 const Card = ({producto}) => {
 
-    const {handleFavorito, clicked} = useContext(ClothContext)
+    const {handleFavorito, clicked, setClicked} = useContext(ClothContext)
     // const {image, price, title, description} = producto
     
     const [active, setActive] = useState(false)
 
-    useEffect(() => {
-        if(favorito.length === 0){
-            setClicked(false)
-        }
-    }, [favorito])
-    
     const handleClick = (producto) =>{
         setClicked(!clicked)
         handleFavorito(producto)

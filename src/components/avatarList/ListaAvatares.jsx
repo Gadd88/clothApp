@@ -5,11 +5,13 @@ import Avatar from "../avatar/Avatar"
 import Boton from "../boton/Boton"
 
 
-const ListaAvatares = ({favorito}) => {
+const ListaAvatares = () => {
 
-  const {setFavorito} = useContext(ClothContext)
+  const {setFavorito, favorito, setClicked} = useContext(ClothContext)
+  
   const borrarStorage = () =>{
     setFavorito([])
+    setClicked(false)
   }
 
     let img = 'http://www.ooshirts.com/products/165/catalog.jpg'
