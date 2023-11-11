@@ -38,7 +38,7 @@ export default function Menu({ active, setActive, children }) {
                             style={{
                                 transform: `translateX(${isVisible ? '0' : '-300px'})`,
                             }}
-                            className="z-10 h-full w-[300px] border-2 border-black bg-[var(--celeste)] font-bold transition-transform duration-300 flex flex-col justify-around items-end pe-4"
+                            className="z-10 h-full w-[300px] border-2 border-black bg-green-300 font-bold transition-transform duration-300 flex flex-col justify-around items-end pe-4"
                             >
                             {children}
                         </div>
