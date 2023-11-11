@@ -8,8 +8,6 @@ export const ClothProvider = ({children}) => {
     
     const [productsApi, setProductsApi] = useState([])
     
-    const [clicked, setClicked] = useState(false)
-    
     const [favorito, setFavorito] = useState(favoritosIniciales)
     
 
@@ -45,7 +43,6 @@ export const ClothProvider = ({children}) => {
             const newFav = favorito.filter(item => item.name != existeItem.name)
             setFavorito(newFav)
         }
-        
     }
 
     return (
@@ -55,8 +52,6 @@ export const ClothProvider = ({children}) => {
                 favorito,
                 setFavorito,
                 handleFavorito,
-                clicked,
-                setClicked
             }}>
             {children}
         </ClothContext.Provider>
