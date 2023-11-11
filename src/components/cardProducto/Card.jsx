@@ -1,7 +1,7 @@
 
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"
 import ListaTags from "../tagList/ListaTags"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Modal from "../modal/Modal"
 import { ClothContext } from "../../context/clothContext"
 
@@ -14,6 +14,12 @@ const Card = ({producto}) => {
     
     const [active, setActive] = useState(false)
 
+    useEffect(() => {
+        if(favorito.length === 0){
+            setClicked(false)
+        }
+    }, [favorito])
+    
     const handleClick = (producto) =>{
         setClicked(!clicked)
         handleFavorito(producto)
@@ -22,7 +28,6 @@ const Card = ({producto}) => {
 
   return (    
     <>
-    
         <div className={`w-[150px] h-[250px] sm:w-[200px] sm:h-[300px] border-black border-2 rounded-lg ${clicked ? 'shadow-[4px_4px_0_var(--chicle)]' : 'shadow-box'} bg-green-300 overflow-hidden flex-shrink-0`}> 
             <article className="w-full h-full flex flex-col items-center p-2 justify-between">
                 <figure className="w-[130px] h-[230px] sm:w-[180px] sm:h-[150px] border-black border-2 shadow-box-sm rounded-md overflow-hidden cursor-pointer bg-white" onClick={()=>setActive(true)}>
