@@ -9,9 +9,9 @@ import { ClothContext } from "../../context/clothContext"
 
 const Card = ({producto}) => {
 
-    const {handleFavorito, favorito} = useContext(ClothContext)
+    const {handleFavorito, clicked} = useContext(ClothContext)
     // const {image, price, title, description} = producto
-    const [clicked, setClicked] = useState(false)
+    
     const [active, setActive] = useState(false)
 
     const handleClick = (producto) =>{

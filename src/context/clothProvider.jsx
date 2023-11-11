@@ -5,6 +5,7 @@ export const ClothProvider = ({children}) => {
 
     const [productsApi, setProductsApi] = useState([])
     const [favorito, setFavorito] = useState([])
+    const [clicked, setClicked] = useState(false)
 
     const url = "https://fakestoreapi.com/products/category/men's%20clothing"
     const url2 = 'https://api.scalablepress.com/v3/categories/raglan-shirts'
@@ -38,6 +39,7 @@ export const ClothProvider = ({children}) => {
                 productsApi,
                 favorito,
                 handleFavorito,
+                clicked,
             }}>
             {children}
         </ClothContext.Provider>
