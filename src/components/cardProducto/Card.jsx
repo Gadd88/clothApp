@@ -9,26 +9,21 @@ import { ClothContext } from "../../context/clothContext"
 
 const Card = ({producto}) => {
 
-    const {handleFavorito, favorito} = useContext(ClothContext)
+    const {handleFavorito, isFavorite} = useContext(ClothContext)
     // const {image, price, title, description} = producto
-    const [clicked, setClicked] = useState(false)
+    
     const [active, setActive] = useState(false)
 
-    useEffect(() => {
-        if(favorito.length === 0){
-            setClicked(false)
-        }
-    }, [favorito])
+    const isFav = isFavorite(producto?.id)
     
     const handleClick = (producto) =>{
-        setClicked(!clicked)
         handleFavorito(producto)
     }
 
 
   return (    
     <>
-        <div className={`w-[150px] h-[250px] sm:w-[200px] sm:h-[300px] border-black border-2 rounded-lg ${clicked ? 'shadow-[4px_4px_0_var(--chicle)]' : 'shadow-box'} bg-green-300 overflow-hidden flex-shrink-0`}> 
+        <div className={`w-[150px] h-[250px] sm:w-[200px] sm:h-[300px] border-black border-2 rounded-lg ${isFav ? 'shadow-[4px_4px_0_var(--chicle)]' : 'shadow-box'} bg-green-300 overflow-hidden flex-shrink-0`}> 
             <article className="w-full h-full flex flex-col items-center p-2 justify-between">
                 <figure className="w-[130px] h-[230px] sm:w-[180px] sm:h-[150px] border-black border-2 shadow-box-sm rounded-md overflow-hidden cursor-pointer bg-white" onClick={()=>setActive(true)}>
                     <img
@@ -45,7 +40,7 @@ const Card = ({producto}) => {
                             className="cursor-pointer relative active:drop-shadow-[1px_1px_0_#000] p-1 "
                             onClick={()=>handleClick(producto)}>
                             {
-                                clicked && <AiFillHeart/> || <AiOutlineHeart/>
+                                isFav && <AiFillHeart/> || <AiOutlineHeart/>
                             }
                         </span>
                     </section>
