@@ -36,7 +36,7 @@ const Navbar = () =>{
                     <AiFillHeart className="w-10 h-10" onClick={()=>setShowFav(!showFav)}/>
                 </Boton>
                 {
-                    showFav && <ListaAvatares favorito={favorito}/>
+                    showFav && <ListaAvatares/>
                 }
             </Menu>
         </header>

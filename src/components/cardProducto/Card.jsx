@@ -1,7 +1,7 @@
 
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"
 import ListaTags from "../tagList/ListaTags"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import Modal from "../modal/Modal"
 import { ClothContext } from "../../context/clothContext"
 

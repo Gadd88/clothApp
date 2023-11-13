@@ -7,6 +7,7 @@ export const ClothProvider = ({children}) => {
     // if(!favoritosIniciales) favoritosIniciales = []
     
     const [productsApi, setProductsApi] = useState([])
+    
     const [favorito, setFavorito] = useState([])
     
 
