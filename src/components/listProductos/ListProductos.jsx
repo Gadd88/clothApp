@@ -14,8 +14,8 @@ const ListProductos = () => {
   }
 
   return (
-    <div className="flex flex-col bg-slate-400 w-full mt-2 items-center justify-center">
-      <Dropdown value='Categorias'>
+    <div className="flex flex-col w-full mt-2 items-center lg:items-start justify-center p-4">
+      <Dropdown title='Categorias'>
         <SelectItem title='Remeras' id='remeras' handleItem={(e)=>handleCategoria(e)}/>
         <SelectItem title='Jeans' id='jeans' handleItem={(e)=>handleCategoria(e)}/>
         <SelectItem title='Bermudas' id='bermudas' handleItem={(e)=>handleCategoria(e)}/>
