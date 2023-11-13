@@ -4,6 +4,7 @@ import ListaTags from "../tagList/ListaTags"
 import { useContext, useState } from "react"
 import Modal from "../modal/Modal"
 import { ClothContext } from "../../context/clothContext"
+import Tag from "../tag/Tag"
 
 
 
@@ -32,7 +33,11 @@ const Card = ({producto}) => {
                         className="w-full h-full object-contain"
                         />
                 </figure>
-                <ListaTags />
+                <ListaTags title='Talles:'>
+                    <Tag prop='S' color='bg-yellow-200'/>
+                    <Tag prop='M' color='bg-red-300'/>
+                    <Tag prop='L' color='bg-blue-300'/>
+                </ListaTags>
                 <div className="flex flex-col justify-between items-end w-full">
                     <section className="w-full flex items-center justify-between px-1 mb-5">
                         <h2 className="text-sm ps-1 w-[80%] line-clamp-1 border-2 border-black shadow-box-sm bg-white font-bold">{producto.name}</h2>
