@@ -1,13 +1,11 @@
 
 
-const SelectItem = ({title, id, bg, handleItem}) => {
+const SelectItem = ({title, ...props}) => {
   return (
-    <p
-        className={`block px-4 py-2 text-md text-black font-bold border-black border-b-2 rounded-none ${bg ? bg : ''} hover:bg-[#B8FF9F] hover:font-medium hover:italic cursor-pointer`} 
-        value={title}
+    <p 
         role="menuitem"
-        onClick={handleItem}
-        id={id}>
+        {...props}
+        >
         {title}
     </p>
   )

@@ -28,15 +28,15 @@ const Card = ({producto}) => {
             <article className="w-full h-full flex flex-col items-center p-2 justify-between">
                 <figure className="w-[130px] h-[230px] sm:w-[180px] sm:h-[150px] border-black border-2 shadow-box-sm rounded-md overflow-hidden cursor-pointer bg-white" onClick={()=>setActive(true)}>
                     <img
-                        src={producto.image?.url ? producto.image.url : 'http://www.ooshirts.com/products/165/catalog.jpg'}
+                        src={producto.image?.url}
                         alt="thumbnail"
                         className="w-full h-full object-contain"
                         />
                 </figure>
                 <ListaTags title='Talles:'>
-                    <Tag prop='S' color='bg-yellow-200'/>
-                    <Tag prop='M' color='bg-red-300'/>
-                    <Tag prop='L' color='bg-blue-300'/>
+                    <Tag title='S' className={`w-[30px] rounded-none border-1 border-black bg-slate-200 p-1 text-xs text-center font-semibold shadow-box-sm transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none font-sans mt-1 mx-1 cursor-default`}/>
+                    <Tag title='M' className={`w-[30px] rounded-none border-1 border-black bg-pink-400 p-1 text-xs text-center font-semibold shadow-box-sm transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none font-sans mt-1 mx-1 cursor-default`}/>
+                    <Tag title='L' className={`w-[30px] rounded-none border-1 border-black bg-blue-300 p-1 text-xs text-center font-semibold shadow-box-sm transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none font-sans mt-1 mx-1 cursor-default`}/>
                 </ListaTags>
                 <div className="flex flex-col justify-between items-end w-full">
                     <section className="w-full flex items-center justify-between px-1 mb-5">

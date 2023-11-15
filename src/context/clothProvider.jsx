@@ -2,24 +2,21 @@ import { useEffect, useState } from 'react'
 import { ClothContext } from './clothContext'
 
 export const ClothProvider = ({children}) => {
-
-    // let favoritosIniciales = JSON.parse(localStorage.getItem('favoritos'))
-    // if(!favoritosIniciales) favoritosIniciales = []
     
     const [productsApi, setProductsApi] = useState([])
     
     const [favorito, setFavorito] = useState([])
     
-
-    // const url = "https://fakestoreapi.com/products/category/men's%20clothing"
     const url2 = 'https://api.scalablepress.com/v3/categories/raglan-shirts'
+    const url = 'https://api.scalablepress.com/v3/categories/performance-shirts'
     
     useEffect(() => {
         try{
             const consultaApi = async () => {
-                const respuesta = await fetch(url2);
+                const respuesta = await fetch(url);
                 const data = await respuesta.json();
-                setProductsApi(data.products.slice(0,10))
+                const conImg = data.products.filter( item => item.image)
+                setProductsApi(conImg.sort(()=>Math.random() - 0.5).slice(0,10))
             }
             consultaApi()
         }catch(error){
