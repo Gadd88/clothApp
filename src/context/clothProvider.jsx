@@ -3,12 +3,12 @@ import { ClothContext } from './clothContext'
 
 export const ClothProvider = ({children}) => {
 
-    let favoritosIniciales = JSON.parse(localStorage.getItem('favoritos'))
-    if(!favoritosIniciales) favoritosIniciales = []
+    // let favoritosIniciales = JSON.parse(localStorage.getItem('favoritos'))
+    // if(!favoritosIniciales) favoritosIniciales = []
     
     const [productsApi, setProductsApi] = useState([])
     
-    const [favorito, setFavorito] = useState(favoritosIniciales)
+    const [favorito, setFavorito] = useState([])
     
 
     // const url = "https://fakestoreapi.com/products/category/men's%20clothing"
@@ -27,22 +27,40 @@ export const ClothProvider = ({children}) => {
         }
     }, [])
 
+    const guardarEnLocalStorage = (items) =>{
+        localStorage.setItem('favoritos', JSON.stringify(items))
+    }
+
+    const borrarStorage = () => localStorage.removeItem('favoritos')
+    const cargarDeLocalStorage = () => localStorage.getItem("favoritos");
+
+    const isFavorite = (id) => favorito && favorito.find(item => item.id === id)
+
     useEffect(()=>{
-        if(favoritosIniciales){
-            localStorage.setItem('favoritos', JSON.stringify(favorito))
+        const data = cargarDeLocalStorage();
+        if(data === null){
+            setFavorito([])
         }else{
-            localStorage.setItem('favoritos', JSON.stringify([]))
+            setFavorito(JSON.parse(data))
         }
-    },[favorito, favoritosIniciales])
+    },[])
     
     const handleFavorito = (producto) =>{
-        const existeItem = favorito.find(item => item.id === producto.id)
+        const existeItem = favorito?.find(item => item.id === producto.id)
         if(!existeItem){
+            guardarEnLocalStorage([...favorito, producto])
             setFavorito([...favorito, producto])
         }else{
-            const newFav = favorito.filter(item => item.name != existeItem.name)
+            const newFav = favorito.filter(item => item.id != existeItem.id)
+            guardarEnLocalStorage(newFav)
             setFavorito(newFav)
         }
+    }
+
+    const handleStorage = () => {
+        setFavorito([])
+        borrarStorage();
+        
     }
 
     return (
@@ -51,7 +69,9 @@ export const ClothProvider = ({children}) => {
                 productsApi,
                 favorito,
                 setFavorito,
+                isFavorite,
                 handleFavorito,
+                handleStorage
             }}>
             {children}
         </ClothContext.Provider>

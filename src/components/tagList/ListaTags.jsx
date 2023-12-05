@@ -1,12 +1,9 @@
-import Tag from "../tag/Tag"
 
-const ListaTags = () => {
+const ListaTags = ({title, children}) => {
   return (
-    <div className="flex items-center mb-2 w-full">
-        Talles:
-        <Tag talle='S'/>
-        <Tag talle='M'/>
-        <Tag talle='L'/>
+    <div className="flex items-center w-full p-1 justify-center">
+        {title}
+        {children}
     </div>
   )
 }

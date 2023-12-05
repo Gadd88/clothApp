@@ -7,11 +7,9 @@ import Boton from "../boton/Boton"
 
 const ListaAvatares = () => {
 
-  const {setFavorito, favorito} = useContext(ClothContext)
+  const {handleStorage, favorito} = useContext(ClothContext)
   
-    const borrarStorage = () =>{
-      setFavorito([])
-    }
+  
     let img = 'http://www.ooshirts.com/products/165/catalog.jpg'
   
     return (
@@ -27,9 +25,9 @@ const ListaAvatares = () => {
             }
           </article>
           {
-            favorito.length > 0
+            favorito?.length > 0
             ? (
-              <Boton handleClick={borrarStorage}>
+              <Boton handleClick={handleStorage}>
                 <RiDeleteBin2Line/>
               </Boton>
             ): null

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { AiFillHeart, AiOutlineMenu, AiOutlineShopping } from 'react-icons/ai'
+import { AiFillHeart, AiOutlineMenu } from 'react-icons/ai'
 import { ClothContext } from "../../context/clothContext"
 import Boton from "../boton/Boton"
 import Items from "../menu/items"
@@ -32,7 +32,7 @@ const Navbar = () =>{
                 setActive={setActive}>
                 <Items/>
                 <Boton>
-                    <div className={`text-white ${favorito.length>0 ? 'flex' : 'hidden'} items-center justify-center absolute -top-2 -right-2 bg-[var(--aqua)] rounded-full border-2 border-black p-1 h-7 w-7 text-2xl font-grotesque`}>{favorito.length}</div>
+                    <div className={`text-white ${favorito?.length>0 ? 'flex' : 'hidden'} items-center justify-center absolute -top-2 -right-2 bg-[var(--aqua)] rounded-full border-2 border-black p-1 h-7 w-7 text-2xl font-grotesque`}>{favorito?.length}</div>
                     <AiFillHeart className="w-10 h-10" onClick={()=>setShowFav(!showFav)}/>
                 </Boton>
                 {
